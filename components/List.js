@@ -40,6 +40,9 @@ class List extends Component {
 
           <Button style={{margin: 2}} onPress={()=>{this.onQuestionPress('TIC')}}
           raised icon={{name: 'code'}} title='TIC'/>
+
+          <Button style={{margin: 2}} onPress={()=>{this.onQuestionPress('HISTÓRIA')}}
+          raised icon={{name: 'code'}} title='HISTÓRIA'/>
                 
       </ScrollView>
     );
