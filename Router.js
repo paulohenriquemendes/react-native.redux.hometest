@@ -8,7 +8,7 @@ const RouterComponent = () => {
   return (
     <Router sceneStyle={{ paddingTop: 65 }}>
     <Stack key="root" title="WR->ENEM">
-      <Scene key="list" component={List} title="SELECIONE UMA DISCIPLINA" initial />
+      <Scene key="list" component={List} title="AVALIAPP (EEM WR)" initial />
       <Scene key="question" component={Question} title="RESPONDA" />
     </Stack>
     </Router>

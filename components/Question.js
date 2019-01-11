@@ -70,7 +70,7 @@ class Question extends Component {
           <Text >{i.title} {i.body}</Text>
           {console.log("Questão certa: " + i.questionTrue)}
           {console.log("Selecionadas: " + this.selected)}
-          
+
           <View>
             <CheckBox title={'a) ' + i.items[0].a} uncheckedIcon='circle-o' checkedIcon='dot-circle-o'
               onPress={() => this.setState({ radioButton: 'question_' + [j] + '_a)' })} checked={this.state.radioButton === 'question_' + [j] + '_a)'} />
