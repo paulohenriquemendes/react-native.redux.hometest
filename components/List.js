@@ -23,6 +23,7 @@ class List extends Component {
 
     return (
       <ScrollView>
+      
           <Button style={{margin: 2}} onPress={()=>{this.onQuestionPress('BIOLOGIA')}}
           raised icon={{name: 'code'}} title='BIOLOGIA'/>
           
@@ -43,6 +44,7 @@ class List extends Component {
 
           <Button style={{margin: 2}} onPress={()=>{this.onQuestionPress('HISTÓRIA')}}
           raised icon={{name: 'code'}} title='HISTÓRIA'/>
+          
                 
       </ScrollView>
     );
