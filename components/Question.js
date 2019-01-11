@@ -21,21 +21,17 @@ class Question extends Component {
     this.props.fetchPost(this.props.category); // precisamos passar da categoria
   }
 
-  setSeleteds(x, j){    
-      const search = 'question_'+x[9];
-      let i;
-      for (i = 0; i < this.selected.length; i++) {
-        if (x === this.selected[i]) {
+  setSeleteds(x){    
+      for (let i = 0; i < this.selected.length; i++) {
+        if (x[9] == this.selected[i][9]) {
+          this.selected[i] = x;
           return false;
         }
+        
     }
-   
-    console.log(this.selected.includes(search));
-    console.log(x);
-    //this.setState(()=>{this.state.
+      
       this.selected.push(x)
-      // console.log(this.selected.getAttribute());
-    //})
+
   }
 
   render() {
