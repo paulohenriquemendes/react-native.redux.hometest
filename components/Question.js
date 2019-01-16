@@ -3,6 +3,8 @@ import { ScrollView, StyleSheet, TouchableOpacity, View, } from 'react-native';
 import { connect } from 'react-redux';
 import { Text, CheckBox, Button } from 'react-native-elements';
 import Modal from 'react-native-modal';
+import { Actions } from 'react-native-router-flux';
+import list from './List';
 
 import { fetchPost } from '../actions';
 
@@ -29,7 +31,10 @@ class Question extends Component {
   _renderModalContent = () => (
     <View style={styles.modalContent}>
       <Text>Você acertou {this.contador} questões! Aguarde a correção do professor(a)</Text>
-      {this._renderButton('Fechar', () => this.setState({ visibleModal: null }))}
+      {this._renderButton('Fechar', () => {
+        this.setState({ visibleModal: null });
+        Actions.pop();
+      })}
     </View>
   );
 
@@ -65,7 +70,7 @@ class Question extends Component {
       }
 
       return (
-        <TouchableOpacity key={j}>
+        <View key={j}>
           <Text >{i.teacherName}</Text>
           <Text >{i.title} {i.body}</Text>
           {console.log("Questão certa: " + i.questionTrue)}
@@ -83,7 +88,7 @@ class Question extends Component {
             <CheckBox title={'e) ' + i.items[0].e} uncheckedIcon='circle-o' checkedIcon='dot-circle-o'
               onPress={() => this.setState({ radioButton: 'question_' + [j] + '_e)' })} checked={this.state.radioButton === 'question_' + [j] + '_e)'} />
           </View>
-        </TouchableOpacity>
+        </View>
       )
     });
 
